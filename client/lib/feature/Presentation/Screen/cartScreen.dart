@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'Widgets/customappbar.dart';
+import '../Widgets/customappbar.dart';
 class CartScreen extends StatelessWidget {
   const CartScreen({super.key});
   static const String routename="/cart";

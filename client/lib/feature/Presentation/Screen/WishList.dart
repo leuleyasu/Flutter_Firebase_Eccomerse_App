@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'Widgets/customappbar.dart';
+import '../Widgets/customappbar.dart';
 class WishListScreen extends StatelessWidget {
   const WishListScreen({super.key});
   static const String routename="/wish";

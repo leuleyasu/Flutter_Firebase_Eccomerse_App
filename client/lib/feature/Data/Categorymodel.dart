@@ -4,14 +4,14 @@ class CategoryModel extends Equatable {
 
    final String name;
    final String imageUrl;
-   CategoryModel({
+   const CategoryModel({
     required this.name,
     required this.imageUrl,
   });
   @override
   List<Object?> get props => [name,imageUrl];
  static List<CategoryModel> categories = [
-    CategoryModel(
+    const CategoryModel(
       name: 'Soft Drinks',
       imageUrl:
           'https://images.unsplash.com/photo-1534057308991-b9b3a578f1b1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80', //https://unsplash.com/photos/5lZhD2qQ2SE
