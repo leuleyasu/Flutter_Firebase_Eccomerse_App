@@ -1,3 +1,4 @@
+import 'package:client/feature/Data/Categorymodel.dart';
 import 'package:client/feature/Presentation/Screen/CatalogScreen.dart';
 import 'package:client/feature/Presentation/Screen/Homescreen.dart';
 import 'package:client/feature/Presentation/Screen/ProductScren.dart';
@@ -11,7 +12,7 @@ class AppRouter {
 switch(settings.name){
   case '/':return HomeScreen.route();
   case CartScreen.routename:return CartScreen.route();
-  case CatalogScreen.routename:return CatalogScreen.route();
+  case CatalogScreen.routename:return CatalogScreen.route(category: settings.arguments as CategoryModel);
   case ProductScreen.routename:return ProductScreen.route();
   case WishListScreen.routename:return WishListScreen.route();
 default:
