@@ -18,7 +18,7 @@ class ProductCarausel extends StatelessWidget {
        width: MediaQuery.of(context).size.width/2.5,
 
        height: 150,
-       child: Image.network(ProductModel.products[0].imageUrl),
+       child: Image.network(product.imageUrl),
     ),
     Positioned(
        top: 60,
@@ -26,7 +26,7 @@ class ProductCarausel extends StatelessWidget {
          height: 70,
          width: MediaQuery.of(context).size.width/2.5,
 
-         decoration: BoxDecoration(
+         decoration: const BoxDecoration(
            color: Colors.black
 
          ),
@@ -34,20 +34,20 @@ class ProductCarausel extends StatelessWidget {
            padding: const EdgeInsets.symmetric(horizontal: 10),
            child: Column(
              children: [
-               Text(ProductModel.products[0].name,style: const TextStyle(color: Colors.white),)
+               Text(product.name,style: const TextStyle(color: Colors.white),)
             ,   Expanded(
 
                 child: Row(
                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                  children: [
-                  Text("\$${ProductModel.products[0].price}",style: const TextStyle(color: Colors.white),)
+                  Text("\$${product.price}",style: const TextStyle(color: Colors.white),)
                       ,
 
                       Padding(
                        padding: const  EdgeInsets.only(left: 39),
                         child: Expanded(
 
-                                   child: IconButton(onPressed: (){}, icon: const Icon(Icons.add_circle, color: Colors.white,))),
+                  child: IconButton(onPressed: (){}, icon: const Icon(Icons.add_circle, color: Colors.white,))),
                       ),
 
 

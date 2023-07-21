@@ -57,7 +57,13 @@ body: Column(
     ),
 
  SectionTitle(title: "Reccomended"),
-ProductSliderSection(product:ProductModel.products ),
+ProductSliderSection(product:
+ProductModel.products.where(
+  (products) => products.isReccomended).toList() ),
+ SectionTitle(title: "Popular"),
+ProductSliderSection(product:
+ProductModel.products.where(
+  (products) => products.ispopular).toList() ),
 
   ]
 ));
