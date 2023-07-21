@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'Widgets/customappbar.dart';
+import '../Widgets/customappbar.dart';
 class CatalogScreen extends StatelessWidget {
   const CatalogScreen({super.key});
   static const String routename="/catalog";
