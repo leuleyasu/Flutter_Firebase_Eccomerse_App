@@ -1,7 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first, must_be_immutable
 import 'package:flutter/material.dart';
 
-class Customappbar extends StatelessWidget  {
+class Customappbar extends StatelessWidget {
   String title;
 
    Customappbar({
@@ -11,21 +11,21 @@ class Customappbar extends StatelessWidget  {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title:  Text(title),
+    return AppBar(
+             title:  Text(title),
         actions: [
           IconButton(onPressed: (){
 
-          }, icon: Icon(Icons.favorite_outline))
+          }, icon: const Icon(Icons.favorite_outline))
 
         ],
 
-      )
 
 
     );
   }
 
-Size get preferredSize => Size.fromHeight(50.0);
+  @override
+  // TODO: implement preferredSize
+  Size get preferredSize => throw UnimplementedError();
 }

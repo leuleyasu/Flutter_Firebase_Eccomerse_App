@@ -1,2 +1,3 @@
-export 'Categorymodel.dart';
+
 export 'ProductModel.dart';
+export 'Categorymodel.dart';

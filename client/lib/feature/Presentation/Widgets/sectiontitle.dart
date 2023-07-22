@@ -11,7 +11,7 @@ class SectionTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Padding(
       padding: const EdgeInsets.only(right: 220),
-      child: Text(title,style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+      child: Text(title,style: const TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
     );
   }
 }

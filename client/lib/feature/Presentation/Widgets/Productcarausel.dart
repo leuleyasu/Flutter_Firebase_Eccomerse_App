@@ -35,9 +35,9 @@ class ProductCarausel extends StatelessWidget {
            child: Column(
              children: [
                Text(product.name,style: const TextStyle(color: Colors.white),)
-            ,   Expanded(
+            ,
 
-                child: Row(
+                 Row(
                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                  children: [
                   Text("\$${product.price}",style: const TextStyle(color: Colors.white),)
@@ -53,7 +53,7 @@ class ProductCarausel extends StatelessWidget {
 
                  ]),
 
-            )
+
              ]),
          ),
 
