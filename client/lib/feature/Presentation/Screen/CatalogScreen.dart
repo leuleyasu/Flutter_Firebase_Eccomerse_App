@@ -1,12 +1,13 @@
 
 import 'package:client/feature/Data/Categorymodel.dart';
 import 'package:client/feature/Data/ProductModel.dart';
-import 'package:client/feature/Presentation/Widgets/ProductSlidersection.dart';
 import 'package:client/feature/Presentation/Widgets/widgets.dart';
 import 'package:flutter/material.dart';
 class CatalogScreen extends StatelessWidget {
   const CatalogScreen({super.key, required this.categoriesname});
   static const String routename="/catalog";
+
+
 static Route route({ required CategoryModel categoyname} ){
   return MaterialPageRoute(
     settings: const RouteSettings(
@@ -14,8 +15,10 @@ static Route route({ required CategoryModel categoyname} ){
     ),
     builder: (ctx)=>  CatalogScreen(categoriesname:categoyname,));
 }
-  final CategoryModel categoriesname;
 
+
+
+  final CategoryModel categoriesname;
   @override
   Widget build(BuildContext context) {
    final List<ProductModel> samecategory=ProductModel.products.where((products) => products.category==products.name).toList();
@@ -26,7 +29,7 @@ static Route route({ required CategoryModel categoyname} ){
 bottomNavigationBar: const CustomBottombar(),
 
       body:GridView.builder(
-        itemCount: ProductModel.products.length,
+        itemCount: samecategory.length,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2), itemBuilder: (context,index){
 

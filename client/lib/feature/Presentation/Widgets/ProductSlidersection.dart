@@ -6,7 +6,7 @@ import 'Productcarausel.dart';
 
 class ProductSliderSection extends StatelessWidget {
   final List<ProductModel> product;
-  // final ProductModel products;
+  // final ProductModel product;
   const ProductSliderSection({
     Key? key,
     required this.product,

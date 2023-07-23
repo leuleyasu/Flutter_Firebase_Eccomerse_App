@@ -3,7 +3,6 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:client/feature/Data/Models.dart';
 import 'package:client/feature/Presentation/Widgets/sectiontitle.dart';
 import 'package:flutter/material.dart';
-
 import '../Widgets/ProductSlidersection.dart';
 import '../Widgets/CatagorySlider.dart';
 import '../Widgets/custombottmbar.dart';
@@ -51,7 +50,7 @@ class _HomeScreenState extends State<HomeScreen> {
               initialPage: 2,
 
                 ),
-                items: CategoryModel.categories.map((e) => CategoryProductSlider(category: e)).toList(),
+       items: CategoryModel.categories.map((e) => CategoryProductSlider(category: e)).toList(),
               ),
             ),
 
