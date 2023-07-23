@@ -3,11 +3,11 @@ import 'package:client/feature/Data/Categorymodel.dart';
 import 'package:client/feature/Data/ProductModel.dart';
 import 'package:client/feature/Presentation/Screen/CatalogScreen.dart';
 import 'package:client/feature/Presentation/Screen/Homescreen.dart';
-import 'package:client/feature/Presentation/Screen/WishList.dart';
 import 'package:client/feature/Presentation/Screen/cartScreen.dart';
 import 'package:flutter/material.dart';
 
 import '../Presentation/Screen/ReccomendedProduct.dart';
+import '../Presentation/Screen/WishlistScreen.dart';
 
 
 class AppRouter {

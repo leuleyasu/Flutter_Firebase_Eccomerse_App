@@ -1,6 +1,5 @@
 
-export 'Homescreen.dart';
 export 'CatalogScreen.dart';
-export 'ReccomendedProduct.dart';
-export 'WishList.dart';
+export 'Homescreen.dart';
+export 'WishlistScreen.dart';
 export 'cartScreen.dart';

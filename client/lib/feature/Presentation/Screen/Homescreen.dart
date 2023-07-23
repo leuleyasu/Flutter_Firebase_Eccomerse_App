@@ -34,7 +34,12 @@ class _HomeScreenState extends State<HomeScreen> {
       backgroundColor: Colors.black12,
       shadowColor: Colors.black12,
       title: const Center(child: Text("Eccomerse Demo App", style:  TextStyle(fontWeight: FontWeight.w400),)),
-    ),
+
+   actions: [
+IconButton(onPressed: (){
+  Navigator.pushNamed(context, '/Wishlist');
+}, icon:  Icon(Icons.favorite_outline))
+   ], ),
     bottomNavigationBar: const CustomBottombar(),
 
     body: SingleChildScrollView(
