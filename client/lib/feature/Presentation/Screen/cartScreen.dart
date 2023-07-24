@@ -1,4 +1,5 @@
 import 'package:client/feature/Data/ProductModel.dart';
+import 'package:client/feature/Presentation/Widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
 import '../Widgets/customappbar.dart';
@@ -19,6 +20,7 @@ static Route route(){
         title: Customappbar(title: 'Cart'),
 
       ),
+      bottomNavigationBar: const CustomBottombar(),
       body:  Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 10),
         child: Column(
@@ -51,7 +53,28 @@ class CartProduct extends StatelessWidget {
         Image.network(product.imageUrl,
         width: 100,
         height: 100,
-        )
+        ),
+      Column(
+
+        children: [
+        Text(product.name),
+        Text('${product.price}'),
+
+       Row(
+children: [
+  IconButton(onPressed: (){}
+  , icon: Icon(Icons.remove_circle)),
+  Text("1"),
+   IconButton(onPressed: (){}
+  , icon: Icon(Icons.add_circle))
+],
+       )
+
+        ],
+
+      )
+
+
       ],
 
     );
