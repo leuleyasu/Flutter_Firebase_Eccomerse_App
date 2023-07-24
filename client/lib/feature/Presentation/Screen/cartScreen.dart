@@ -1,3 +1,4 @@
+import 'package:client/feature/Data/ProductModel.dart';
 import 'package:flutter/material.dart';
 
 import '../Widgets/customappbar.dart';
@@ -15,8 +16,44 @@ static Route route(){
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Customappbar(title: 'Demo Eccomerse App',),
+        title: Customappbar(title: 'Cart'),
+
       ),
+      body:  Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 10),
+        child: Column(
+          children: [
+       Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          const Text("Add one item for free delivery"),
+          ElevatedButton(onPressed: (){},
+           child: const Text("Add More Items"))
+        ],
+       ),
+
+        CartProduct(product: ProductModel.products[0],)
+         ],
+        ),
+      ),
+    );
+  }
+}
+class CartProduct extends StatelessWidget {
+  final ProductModel product;
+  const CartProduct({super.key,required this.product});
+
+  @override
+  Widget build(BuildContext context) {
+
+    return Row(
+      children: [
+        Image.network(product.imageUrl,
+        width: 100,
+        height: 100,
+        )
+      ],
+
     );
   }
 }
