@@ -1,7 +1,9 @@
+import 'package:client/feature/Data/Models.dart';
 import 'package:client/feature/Data/ProductModel.dart';
 import 'package:client/feature/Presentation/Widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
+import '../Widgets/CartproductWidget.dart';
 import '../Widgets/customappbar.dart';
 class CartScreen extends StatelessWidget {
   const CartScreen({super.key});
@@ -20,7 +22,22 @@ static Route route(){
         title: Customappbar(title: 'Cart'),
 
       ),
-      bottomNavigationBar: const CustomBottombar(),
+      bottomNavigationBar: BottomAppBar(
+        color: Colors.black,
+        child: Container(
+          height: 70,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          ElevatedButton(onPressed: (){}, child:
+
+          const Text("Go To Checkout", style: TextStyle(color: Colors.white),)
+          )
+        ],
+
+          ),
+        ),
+      ),
       body:  Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 10),
         child: Column(
@@ -33,50 +50,19 @@ static Route route(){
            child: const Text("Add More Items"))
         ],
        ),
+       SizedBox(height: 20,),
+       ListView.builder(
+        itemCount: Cart.products.length,
+        itemBuilder:
 
-        CartProduct(product: ProductModel.products[0],)
+       (context,index){
+      return  CartProduct(product: ProductModel.products[index],);
+
+       })
+
          ],
         ),
       ),
-    );
-  }
-}
-class CartProduct extends StatelessWidget {
-  final ProductModel product;
-  const CartProduct({super.key,required this.product});
-
-  @override
-  Widget build(BuildContext context) {
-
-    return Row(
-      children: [
-        Image.network(product.imageUrl,
-        width: 100,
-        height: 100,
-        ),
-      Column(
-
-        children: [
-        Text(product.name),
-        Text('${product.price}'),
-
-       Row(
-children: [
-  IconButton(onPressed: (){}
-  , icon: Icon(Icons.remove_circle)),
-  Text("1"),
-   IconButton(onPressed: (){}
-  , icon: Icon(Icons.add_circle))
-],
-       )
-
-        ],
-
-      )
-
-
-      ],
-
     );
   }
 }
