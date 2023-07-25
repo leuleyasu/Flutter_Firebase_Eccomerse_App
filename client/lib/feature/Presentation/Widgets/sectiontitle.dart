@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-
 class SectionTitle extends StatelessWidget {
-  String  title;
+   String  title;
    SectionTitle({
     Key? key,
     required this.title,
@@ -11,7 +10,7 @@ class SectionTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Padding(
       padding: const EdgeInsets.only(right: 220),
-      child: Text(title,style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+      child: Text(title,style: const TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
     );
   }
 }

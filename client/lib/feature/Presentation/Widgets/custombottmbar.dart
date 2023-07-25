@@ -11,7 +11,7 @@ class CustomBottombar extends StatelessWidget {
       color: Colors.black,
       height: 50,
       child: Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: Colors.black
       ),
     child: Row(
@@ -19,7 +19,7 @@ class CustomBottombar extends StatelessWidget {
       children: [
         IconButton(onPressed: (){
           Navigator.pushNamed(context, '');
-        }, icon: Icon(Icons.home_outlined, color: Colors.amber,))
+        }, icon: const Icon(Icons.home_outlined, color: Colors.amber,))
        , IconButton(onPressed: (){}, icon: Icon(Icons.shopping_cart,color: Colors.amber,))
         ,IconButton(onPressed: (){}, icon: Icon(Icons.person_outlined,color: Colors.amber,))
       ],

@@ -1,10 +1,13 @@
+
 import 'package:client/feature/Data/Categorymodel.dart';
+import 'package:client/feature/Data/ProductModel.dart';
 import 'package:client/feature/Presentation/Screen/CatalogScreen.dart';
 import 'package:client/feature/Presentation/Screen/Homescreen.dart';
-import 'package:client/feature/Presentation/Screen/ProductScren.dart';
-import 'package:client/feature/Presentation/Screen/WishList.dart';
 import 'package:client/feature/Presentation/Screen/cartScreen.dart';
 import 'package:flutter/material.dart';
+
+import '../Presentation/Screen/ReccomendedProduct.dart';
+import '../Presentation/Screen/WishlistScreen.dart';
 
 
 class AppRouter {
@@ -12,8 +15,8 @@ class AppRouter {
 switch(settings.name){
   case '/':return HomeScreen.route();
   case CartScreen.routename:return CartScreen.route();
-  case CatalogScreen.routename:return CatalogScreen.route(category: settings.arguments as CategoryModel);
-  case ProductScreen.routename:return ProductScreen.route();
+  case CatalogScreen.routename:return CatalogScreen.route(categoyname: settings.arguments as CategoryModel);
+  case ReccomendedProduct.routename:return ReccomendedProduct.route(reccomendedname: settings.arguments as ProductModel);
   case WishListScreen.routename:return WishListScreen.route();
 default:
 return _errorRoute();
@@ -23,7 +26,7 @@ return _errorRoute();
   }
   static Route _errorRoute(){
     return MaterialPageRoute(
-      settings: RouteSettings(
+      settings: const RouteSettings(
         name: '/error'
       ),
       builder: (_)=>Scaffold(

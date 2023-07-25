@@ -1,25 +1,22 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:client/feature/Data/Categorymodel.dart';
 import 'package:client/feature/Data/Models.dart';
-import 'package:client/feature/Presentation/Widgets/Productcarausel.dart';
 import 'package:client/feature/Presentation/Widgets/sectiontitle.dart';
 import 'package:flutter/material.dart';
-
 import '../Widgets/ProductSlidersection.dart';
-import '../Widgets/Productslider.dart';
+import '../Widgets/CatagorySlider.dart';
 import '../Widgets/custombottmbar.dart';
 
 class HomeScreen extends StatefulWidget {
 
-   HomeScreen({super.key});
+const   HomeScreen({super.key});
   static const String routename="/";
 static Route route(){
   return MaterialPageRoute(
     settings: const RouteSettings(
       name: routename
     ),
-    builder: (ctx)=>  HomeScreen());
+    builder: (ctx)=>  const HomeScreen());
 }
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -37,7 +34,12 @@ class _HomeScreenState extends State<HomeScreen> {
       backgroundColor: Colors.black12,
       shadowColor: Colors.black12,
       title: const Center(child: Text("Eccomerse Demo App", style:  TextStyle(fontWeight: FontWeight.w400),)),
-    ),
+
+   actions: [
+IconButton(onPressed: (){
+  Navigator.pushNamed(context, '/Wishlist');
+}, icon:  Icon(Icons.favorite_outline))
+   ], ),
     bottomNavigationBar: const CustomBottombar(),
 
     body: SingleChildScrollView(
@@ -53,7 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
               initialPage: 2,
 
                 ),
-                items: CategoryModel.categories.map((e) => CategoryProductSlider(category: e)).toList(),
+       items: CategoryModel.categories.map((e) => CategoryProductSlider(category: e)).toList(),
               ),
             ),
 
