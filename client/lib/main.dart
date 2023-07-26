@@ -17,7 +17,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(create: (_)=>WishlishBloc()..add(StartWishlist()))
+        BlocProvider(create: (_)=>WishlishBloc()..add(StartWishlist())),
+
       ],
       child: MaterialApp(
         title: 'Flutter Demo',

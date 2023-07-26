@@ -1,19 +1,15 @@
-import 'dart:math';
 
-import 'package:bloc/bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:client/feature/Data/ProductModel.dart';
 import 'package:equatable/equatable.dart';
-import 'package:meta/meta.dart';
-
 import '../../Data/wishlistmodel.dart';
 
 part 'wishlish_event.dart';
 part 'wishlish_state.dart';
 
 class WishlishBloc extends Bloc<WishlishEvent, WishlishState> {
-  WishlishBloc() : super(WishListLoading()) {
+  WishlishBloc() : super(WishListLoading()) ;
 
-@override
 Stream<WishlishState> mapEventToState(WishlishEvent event) async*{
 
 if (event is StartWishlist) {
@@ -31,8 +27,8 @@ else if (event is RemoveWishlist) {
 Stream<WishlishState>_mapStartWishlistToState()async*{
   yield WishListLoading();
   try {
-    await Future<void>.delayed(Duration(seconds: 1));
-    yield WishlistLoaded();
+    await Future<void>.delayed(const Duration(seconds: 1));
+    yield const WishlistLoaded();
   } catch (e) {
     print(e);
   }
@@ -44,11 +40,10 @@ if (state is WishlistLoaded) {
 
 
   try {
-    await Future<void>.delayed(Duration(seconds: 1));
+    await Future<void>.delayed(const Duration(seconds: 1));
     yield WishlistLoaded(wishlist:WishList(product: List.from(state.wishlist.product)..add(event.product)) );
   } catch (e) {
-    print(e);
-  }
+}
 }
   }
 
@@ -59,7 +54,7 @@ if (state is WishlistLoaded) {
 
 
   try {
-    await Future<void>.delayed(Duration(seconds: 1));
+    await Future<void>.delayed(const Duration(seconds: 1));
     yield WishlistLoaded(wishlist:WishList(product: List.from(state.wishlist.product)..remove(event.product)) );
   } catch (e) {
     print(e);
@@ -67,4 +62,4 @@ if (state is WishlistLoaded) {
 }
 
 
-  }}
+  }

@@ -1,6 +1,5 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:client/feature/Business/bloc/wishlish_bloc.dart';
-import 'package:client/feature/Data/ProductModel.dart';
 import 'package:client/feature/Presentation/Widgets/customappbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -29,7 +28,7 @@ class WishListScreen extends StatelessWidget {
         builder: (context, state) {
 
           if (state is WishListLoading) {
-            return Center(child: CircularProgressIndicator(),);
+            return const Center(child: CircularProgressIndicator(),);
 
 
           }else if(state is WishlistLoaded){
@@ -44,7 +43,7 @@ class WishListScreen extends StatelessWidget {
                 );
               });
           }else{
-            return Text("Something Went Wrong");
+            return const Text("Something Went Wrong");
           }
 
         },

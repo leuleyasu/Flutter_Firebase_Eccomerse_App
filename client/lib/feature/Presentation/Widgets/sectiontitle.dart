@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 class SectionTitle extends StatelessWidget {
-   String  title;
-   SectionTitle({
+  final String  title;
+  const SectionTitle({
     Key? key,
     required this.title,
   }) : super(key: key);
