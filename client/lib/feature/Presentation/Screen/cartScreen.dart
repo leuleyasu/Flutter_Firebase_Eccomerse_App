@@ -42,13 +42,17 @@ static Route route(){
         padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 10),
         child: Column(
           children: [
-       Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          const Text("Add one item for free delivery"),
-          ElevatedButton(onPressed: (){},
-           child: const Text("Add More Items"))
-        ],
+       Column(
+         children: [
+           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              const Text("Add one item for free delivery"),
+              ElevatedButton(onPressed: (){},
+               child: const Text("Add More Items"))
+            ],
+           ),
+         ],
        ),
        SizedBox(height: 20,),
        ListView.builder(
@@ -58,7 +62,47 @@ static Route route(){
        (context,index){
       return  CartProduct(product: ProductModel.products[index],);
 
-       })
+       }),
+
+       Column(
+        children: [
+ Divider(thickness: 2,),
+Padding(
+  padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 10),
+  child:   Row(
+    children: [
+      Text("Delivery fee"),
+      Text("\$2.90"),
+
+    ],
+
+  ),
+),
+ Stack(
+    children: [
+Container(
+  width: MediaQuery.of(context).size.width,
+  height: 50,
+  decoration: const BoxDecoration(
+    color: Colors.black
+  ),
+  child:   Padding(
+    padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 10),
+    child: Row(
+      children: [
+        Text("Total",style: TextStyle(color: Colors.white),),
+        Text("\$2.90",style: TextStyle(color: Colors.white)),
+
+      ],
+
+    ),
+  ),
+
+)
+    ],
+  )
+        ],
+       ),
 
          ],
         ),

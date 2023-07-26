@@ -9,7 +9,7 @@ class ProductCarausel extends StatelessWidget {
   final ProductModel product;
   bool iswishlist = false;
 
-  ProductCarausel({
+   ProductCarausel({
     Key? key,
     required this.product,
     this.iswishlist = false,
@@ -52,41 +52,32 @@ class ProductCarausel extends StatelessWidget {
                           "\$${product.price}",
                           style: const TextStyle(color: Colors.white),
                         ),
-                        Padding(
-                            padding: const EdgeInsets.only(left: 29),
-                            child: BlocBuilder<WishlishBloc, WishlishState>(
-                              builder: (context, state) {
-                                return IconButton(
-                                    onPressed: () {
-                                      context
-                                          .read<WishlishBloc>()
-                                          .add(AddWishlist(product: product));
-                                   const snackbar=SnackBar(content:Text("Wishlist Added sucessfully"));
-                                   ScaffoldMessenger.of(context).showSnackBar(snackbar);
+                        Expanded(
+                          child: IconButton(
+                              onPressed: () {
 
-                                     }, icon: const Icon(
-                                      Icons.add_circle,
-                                      color: Colors.white,
-                                    )
 
-                                    );
-                              },
-                            )),
-                        iswishlist
-                            ? BlocBuilder<WishlishBloc, WishlishState>(
-                                builder: (context, state) {
-                                  return IconButton(
-                                      onPressed: () {
-                                        context.read<WishlishBloc>().
-                                      },
-                                      icon: const Icon(
-                                        Icons.delete,
-                                        color: Colors.white,
-                                      ));
-                                },
+                               }, icon: const Icon(
+                                Icons.add_circle,
+                                color: Colors.white,
                               )
-                            : const SizedBox()
-                      ]),
+
+                              ),
+                        ),iswishlist ?
+                             Expanded(
+                               child: IconButton(
+                                                         onPressed: () {
+
+
+                               }, icon: const Icon(
+                                Icons.add_circle,
+                                color: Colors.white,
+                                                         )
+
+                                                         ),
+                             ): const SizedBox()
+
+                                            ]),
                 ]),
               ),
             ),

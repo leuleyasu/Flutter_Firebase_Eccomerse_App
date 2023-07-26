@@ -9,7 +9,7 @@ class WishList extends Equatable{
   const WishList({this.product =const <ProductModel>[]});
 
   @override
-  // TODO: implement props
   List<Object?> get props => [product];
+
 
 }
