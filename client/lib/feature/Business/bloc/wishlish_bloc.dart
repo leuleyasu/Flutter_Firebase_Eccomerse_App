@@ -11,8 +11,8 @@ class WishlishBloc extends Bloc<WishlishEvent, WishlishState> {
   WishlishBloc() : super(WishListLoading()) ;
 
 Stream<WishlishState> mapEventToState(WishlishEvent event) async*{
-
-if (event is StartWishlist) {
+try {
+ if (event is StartWishlist) {
   yield* _mapStartWishlistToState();
 }
 else if (event is AddWishlist) {
@@ -21,8 +21,15 @@ else if (event is AddWishlist) {
 else if (event is RemoveWishlist) {
   yield* _mapRemoveWishlistToState(event,state);
 }
+} catch (e) {
+  print(e);
+}
 
-}}
+
+
+}
+
+}
 
 Stream<WishlishState>_mapStartWishlistToState()async*{
   yield WishListLoading();

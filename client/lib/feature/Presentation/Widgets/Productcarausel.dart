@@ -1,18 +1,15 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:client/feature/Business/bloc/wishlish_bloc.dart';
+
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../Data/ProductModel.dart';
-
 class ProductCarausel extends StatelessWidget {
   final ProductModel product;
-  bool iswishlist = false;
+   bool iswishlist = false;
 
    ProductCarausel({
     Key? key,
     required this.product,
-    this.iswishlist = false,
+  this.iswishlist = false,
   }) : super(key: key);
 
   @override
@@ -22,7 +19,7 @@ class ProductCarausel extends StatelessWidget {
         Navigator.pushNamed(context, '/Reccomended', arguments: product);
       },
       child: Stack(children: [
-        Container(
+        SizedBox(
           width: MediaQuery.of(context).size.width,
           height: 150,
           child: Image.network(
@@ -52,30 +49,26 @@ class ProductCarausel extends StatelessWidget {
                           "\$${product.price}",
                           style: const TextStyle(color: Colors.white),
                         ),
-                        Expanded(
-                          child: IconButton(
-                              onPressed: () {
+                        IconButton(
+                            onPressed: () {
 
 
-                               }, icon: const Icon(
-                                Icons.add_circle,
-                                color: Colors.white,
-                              )
+                             }, icon: const Icon(
+                              Icons.add_circle,
+                              color: Colors.white,
+                            )
 
-                              ),
-                        ),iswishlist ?
-                             Expanded(
-                               child: IconButton(
-                                                         onPressed: () {
+                            ),iswishlist ?
+                             IconButton(
+                        onPressed: () {
 
 
-                               }, icon: const Icon(
-                                Icons.add_circle,
-                                color: Colors.white,
-                                                         )
+                             }, icon: const Icon(
+                              Icons.add_circle,
+                              color: Colors.white,
+                                                       )
 
-                                                         ),
-                             ): const SizedBox()
+                                                       ): const SizedBox()
 
                                             ]),
                 ]),
