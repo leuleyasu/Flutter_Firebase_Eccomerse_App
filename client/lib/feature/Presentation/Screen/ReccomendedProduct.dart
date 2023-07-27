@@ -7,7 +7,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../Data/ProductModel.dart';
 
-class ReccomendedProduct extends StatelessWidget {
+class ReccomendedProduct extends StatefulWidget {
   const ReccomendedProduct({super.key, required this.reccomended});
   final ProductModel reccomended;
 
@@ -19,10 +19,15 @@ class ReccomendedProduct extends StatelessWidget {
   }
 
   @override
+  State<ReccomendedProduct> createState() => _ReccomendedProductState();
+}
+
+class _ReccomendedProductState extends State<ReccomendedProduct> {
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Customappbar(title: reccomended.name),
+        title: Customappbar(title: widget.reccomended.name),
       ),
       bottomNavigationBar: BottomAppBar(
         child: Container(
@@ -38,21 +43,21 @@ class ReccomendedProduct extends StatelessWidget {
                       Icons.share,
                       color: Colors.white,
                     )),
-                BlocBuilder<WishlishBloc, WishlishState>(
-                  builder: (context, state) {
-                    return IconButton(
+                // BlocBuilder<WishlishBloc, WishlishState>(
+                //   builder: (context, state) {
+                    IconButton(
                         onPressed: () {
-                          context.read<WishlishBloc>()
-                                          .add(AddWishlist(reccomended));
-                                   const snackbar=SnackBar(content:Text("Wishlist Added sucessfully"));
-                                   ScaffoldMessenger.of(context).showSnackBar(snackbar);
+                          // context.read<WishlishBloc>()
+                          //                 .add(AddWishlist(widget.reccomended));
+                          //          const snackbar=SnackBar(content:Text("Wishlist Added sucessfully"));
+                          //          ScaffoldMessenger.of(context).showSnackBar(snackbar);
                         },
                         icon: const Icon(
                           Icons.favorite_outline,
                           color: Colors.white,
-                        ));
-                  },
-                ),
+                        )),
+
+
                 ElevatedButton(
                     onPressed: () {}, child: const Text("ADDTO CART"))
               ],
@@ -70,7 +75,7 @@ class ReccomendedProduct extends StatelessWidget {
                       enableInfiniteScroll: false,
                       initialPage: 3,
                     ),
-                    items: [CategoryProductSlider(product: reccomended)])),
+                    items: [CategoryProductSlider(product: widget.reccomended)])),
             Stack(
               children: [
                 Container(
@@ -81,11 +86,11 @@ class ReccomendedProduct extends StatelessWidget {
                 Row(
                   children: [
                     Text(
-                      reccomended.name,
+                      widget.reccomended.name,
                       style: const TextStyle(color: Colors.white),
                     ),
                     Text(
-                      '${reccomended.price}',
+                      '${widget.reccomended.price}',
                       style: const TextStyle(color: Colors.white),
                     ),
                   ],

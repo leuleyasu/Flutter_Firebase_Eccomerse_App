@@ -6,7 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../Widgets/Productcarausel.dart';
 
-class WishListScreen extends StatelessWidget {
+class WishListScreen extends StatefulWidget {
   const WishListScreen({
     Key? key,
   }) : super(key: key);
@@ -15,9 +15,15 @@ class WishListScreen extends StatelessWidget {
   static Route route() {
     return MaterialPageRoute(
         settings: const RouteSettings(name: routename),
-        builder: (ctx) => WishListScreen());
+        builder: (ctx) => const WishListScreen());
   }
 
+  @override
+  State<WishListScreen> createState() => _WishListScreenState();
+}
+
+class _WishListScreenState extends State<WishListScreen> {
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -36,7 +42,7 @@ class WishListScreen extends StatelessWidget {
               itemCount: state.wishlist.product.length,
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2),
-              itemBuilder: (context, index) {
+                 itemBuilder: (context, index) {
                 return ProductCarausel(
                   product: state.wishlist.product[index],
                   iswishlist: true,

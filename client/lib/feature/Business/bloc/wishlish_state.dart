@@ -7,7 +7,7 @@ abstract class WishlishState extends Equatable{
     List<Object?> get props => [];
 }
 
-class WishlishInitial extends WishlishState {}
+
 class WishListLoading extends WishlishState {}
 class WishlistLoaded extends WishlishState {
  final WishList wishlist;
@@ -19,3 +19,4 @@ class WishlistLoaded extends WishlishState {
       List<Object?> get props => [wishlist];
 
 }
+class WishlishError extends WishlishState {}
