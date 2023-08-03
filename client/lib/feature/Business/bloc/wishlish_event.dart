@@ -1,5 +1,9 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-part of 'wishlish_bloc.dart';
+
+import 'package:equatable/equatable.dart';
+
+import '../../Data/ProductModel.dart';
+
 abstract class WishlishEvent extends Equatable {
   const WishlishEvent();
   @override
