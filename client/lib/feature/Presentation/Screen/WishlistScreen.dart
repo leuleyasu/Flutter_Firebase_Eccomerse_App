@@ -31,7 +31,7 @@ class _WishListScreenState extends State<WishListScreen> {
         title: Customappbar(title: "WishList"),
 
       ),
-      body: BlocBuilder<WishlistBloc, WishlishState>(
+      body: BlocBuilder<WishlistBloc, WishlistState>(
 
         builder: (context, state) {
 
