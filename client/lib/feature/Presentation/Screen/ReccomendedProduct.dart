@@ -50,7 +50,7 @@ IconButton(onPressed: (){
                     )),
   BlocProvider<WishlistBloc>(
   create: (context) => WishlistBloc(), // You can also use context.read<WishlistBloc>() if already provided.
-  child: BlocConsumer<WishlistBloc, WishlishState>(
+  child: BlocConsumer<WishlistBloc, WishlistState>(
     listener: (context, state) {
       // Listen to state changes and display a SnackBar when WishlistAddedState is emitted
       if (state is WishlistLoaded) {
