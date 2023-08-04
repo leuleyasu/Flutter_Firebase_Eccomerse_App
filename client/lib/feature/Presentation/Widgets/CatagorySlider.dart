@@ -6,7 +6,7 @@ import '../../Data/Categorymodel.dart';
 class CategoryProductSlider extends StatelessWidget {
   final CategoryModel? category;
   final ProductModel? product;
-   CategoryProductSlider({
+   const CategoryProductSlider({
     Key? key,
      this.category,
        this.product,

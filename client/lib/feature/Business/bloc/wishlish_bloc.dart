@@ -25,7 +25,7 @@ else if (event is RemoveWishlist) {
 
 
 
-}
+
 
 }
 
@@ -68,3 +68,4 @@ if (state is WishlistLoaded) {
 
 
   }
+}
