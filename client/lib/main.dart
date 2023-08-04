@@ -4,10 +4,18 @@ import 'package:client/feature/Presentation/Screen/export.dart';
 import 'package:client/feature/config/approuter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'feature/Business/bloc/wishlish_event.dart';
 
 void main() {
-runApp(MyApp());
+  runApp(
+    MultiBlocProvider(
+      providers: [
+        BlocProvider<WishlistBloc>(
+          create: (_) => WishlistBloc()
+        ),
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -16,14 +24,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider(
-          create: (context) => WishlishBloc()..add(StartWishlist())
-
-        )
-      ],
-      child: MaterialApp(
+    return  MaterialApp(
           title: 'Flutter Demo',
           debugShowCheckedModeBanner: false,
           theme: ThemeData(
@@ -34,7 +35,7 @@ class MyApp extends StatelessWidget {
           ),
           onGenerateRoute: AppRouter.onGenerateRoute,
           initialRoute: HomeScreen.routename,
-        ),
+
     );
 
   }

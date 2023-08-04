@@ -4,15 +4,15 @@ import 'package:equatable/equatable.dart';
 
 import '../../Data/ProductModel.dart';
 
-abstract class WishlishEvent extends Equatable {
-  const WishlishEvent();
+abstract class WishlistEvent extends Equatable {
+  const WishlistEvent();
   @override
   List<Object> get props =>[];
   }
 
- class StartWishlist extends WishlishEvent{}
+ class StartWishlist extends WishlistEvent{}
 
-class AddWishlist extends WishlishEvent {
+class AddWishlist extends WishlistEvent {
     final ProductModel product;
   const AddWishlist(
      this.product,
@@ -21,7 +21,7 @@ class AddWishlist extends WishlishEvent {
         List<Object> get props =>[product];
 
   }
-class RemoveWishlist extends WishlishEvent {
+class RemoveWishlist extends WishlistEvent {
     final ProductModel product;
   const RemoveWishlist( this.product);
       @override

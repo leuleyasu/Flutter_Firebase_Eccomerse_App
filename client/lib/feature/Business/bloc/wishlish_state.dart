@@ -1,13 +1,17 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
-part of 'wishlish_bloc.dart';
-abstract class WishlishState extends Equatable{
-  const WishlishState();
+
+
+import 'package:equatable/equatable.dart';
+
+import '../../Data/wishlistmodel.dart';
+
+abstract class WishlistState extends Equatable{
+  const WishlistState();
 
    @override
     List<Object?> get props => [];
 }
-class WishListLoading extends WishlishState {}
-class WishlistLoaded extends WishlishState {
+class WishListLoading extends WishlistState {}
+class WishlistLoaded extends WishlistState {
  final WishList wishlist;
   const WishlistLoaded({
      this.wishlist= const WishList()
@@ -16,4 +20,4 @@ class WishlistLoaded extends WishlishState {
       List<Object?> get props => [wishlist];
 
 }
-class WishlishError extends WishlishState {}
+class WishlishError extends WishlistState {}

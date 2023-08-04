@@ -5,9 +5,11 @@ import 'package:client/feature/Presentation/Widgets/customappbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../Business/bloc/wishlish_event.dart';
+import '../../Business/bloc/wishlish_state.dart';
 import '../../Data/ProductModel.dart';
 
-class ReccomendedProduct extends StatefulWidget {
+class ReccomendedProduct extends StatelessWidget {
   const ReccomendedProduct({super.key, required this.reccomended});
   final ProductModel reccomended;
 
@@ -18,16 +20,19 @@ class ReccomendedProduct extends StatefulWidget {
         builder: (ctx) => ReccomendedProduct(reccomended: reccomendedname));
   }
 
-  @override
-  State<ReccomendedProduct> createState() => _ReccomendedProductState();
-}
 
-class _ReccomendedProductState extends State<ReccomendedProduct> {
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(
-        title: Customappbar(title: widget.reccomended.name),
+
+   actions: [
+IconButton(onPressed: (){
+  Navigator.pushNamed(context, '/Wishlist');
+}, icon:  const Icon(Icons.favorite_outline))
+   ],
+        title: Customappbar(title: reccomended.name),
       ),
       bottomNavigationBar: BottomAppBar(
         child: Container(
@@ -43,19 +48,32 @@ class _ReccomendedProductState extends State<ReccomendedProduct> {
                       Icons.share,
                       color: Colors.white,
                     )),
-                // BlocBuilder<WishlishBloc, WishlishState>(
-                //   builder: (context, state) {
-                    IconButton(
-                        onPressed: () {
-                          // context.read<WishlishBloc>()
-                          //                 .add(AddWishlist(widget.reccomended));
-                          //          const snackbar=SnackBar(content:Text("Wishlist Added sucessfully"));
-                          //          ScaffoldMessenger.of(context).showSnackBar(snackbar);
-                        },
-                        icon: const Icon(
-                          Icons.favorite_outline,
-                          color: Colors.white,
-                        )),
+  BlocProvider<WishlistBloc>(
+  create: (context) => WishlistBloc(), // You can also use context.read<WishlistBloc>() if already provided.
+  child: BlocConsumer<WishlistBloc, WishlishState>(
+    listener: (context, state) {
+      // Listen to state changes and display a SnackBar when WishlistAddedState is emitted
+      if (state is WishlistLoaded) {
+        const snackbar = SnackBar(content: Text("Wishlist Added successfully"));
+        ScaffoldMessenger.of(context).showSnackBar(snackbar);
+      }
+    },
+    builder: (context, state) {
+      // Build your UI based on the current state
+      return IconButton(
+        onPressed: () {
+          // Dispatch the AddWishlist event when IconButton is pressed
+          context.read<WishlistBloc>().add(AddWishlist(reccomended));
+        },
+        icon: const Icon(
+          Icons.favorite_outline,
+          color: Colors.white,
+        ),
+      );
+    },
+  ),
+),
+
 
 
                 ElevatedButton(
@@ -63,19 +81,23 @@ class _ReccomendedProductState extends State<ReccomendedProduct> {
               ],
             )),
       ),
-      body: ListView(children: [
+      body: ListView(
+        children: [
         Column(
           children: [
             Padding(
                 padding: const EdgeInsets.symmetric(vertical: 20),
                 child: CarouselSlider(
                     options: CarouselOptions(
+                      scrollDirection: Axis.horizontal,
                       aspectRatio: 1.5,
                       enlargeCenterPage: true,
                       enableInfiniteScroll: false,
                       initialPage: 3,
                     ),
-                    items: [CategoryProductSlider(product: widget.reccomended)])),
+                    items: [
+                      CategoryProductSlider(product: reccomended)
+                    ])),
             Stack(
               children: [
                 Container(
@@ -86,11 +108,11 @@ class _ReccomendedProductState extends State<ReccomendedProduct> {
                 Row(
                   children: [
                     Text(
-                      widget.reccomended.name,
+                      reccomended.name,
                       style: const TextStyle(color: Colors.white),
                     ),
                     Text(
-                      '${widget.reccomended.price}',
+                      '${reccomended.price}',
                       style: const TextStyle(color: Colors.white),
                     ),
                   ],
@@ -98,28 +120,28 @@ class _ReccomendedProductState extends State<ReccomendedProduct> {
               ],
             ),
             const ExpansionTile(
-              children: [
-                ListTile(
-                  title: Text(
-                      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus sem. Nulla hendrerit ex non tellus dignissim, eu rhoncus sapien ven"),
-                )
-              ],
               title: Text(
                 "Product information",
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
-            ),
-            ExpansionTile(
               children: [
                 ListTile(
                   title: Text(
                       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus sem. Nulla hendrerit ex non tellus dignissim, eu rhoncus sapien ven"),
                 )
               ],
+            ),
+            const ExpansionTile(
               title: Text(
                 "Delivery information",
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
+              children: [
+                ListTile(
+                  title: Text(
+                      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus sem. Nulla hendrerit ex non tellus dignissim, eu rhoncus sapien ven"),
+                )
+              ],
             )
           ],
         ),
