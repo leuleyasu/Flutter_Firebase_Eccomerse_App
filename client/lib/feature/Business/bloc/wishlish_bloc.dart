@@ -24,10 +24,10 @@ else if (event is RemoveWishlist) {
 }
 
 
-
-
-
 }
+
+
+
 
 Stream<WishlistState>_mapStartWishlistToState()async*{
   yield WishListLoading();
