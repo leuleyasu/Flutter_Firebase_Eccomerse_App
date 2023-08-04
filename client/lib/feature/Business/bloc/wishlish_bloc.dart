@@ -1,16 +1,14 @@
 
+
+import 'package:client/feature/Business/bloc/wishlish_event.dart';
+import 'package:client/feature/Business/bloc/wishlish_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:client/feature/Data/ProductModel.dart';
-import 'package:equatable/equatable.dart';
 import '../../Data/wishlistmodel.dart';
 
-part 'wishlish_event.dart';
-part 'wishlish_state.dart';
+class WishlistBloc extends Bloc<WishlistEvent, WishlistState> {
+  WishlistBloc() : super(WishListLoading()) ;
 
-class WishlishBloc extends Bloc<WishlishEvent, WishlishState> {
-  WishlishBloc() : super(WishListLoading()) ;
-
-Stream<WishlishState> mapEventToState(WishlishEvent event) async*{
+Stream<WishlistState> mapEventToState(WishlistEvent event) async*{
 try {
  if (event is StartWishlist) {
   yield* _mapStartWishlistToState();
@@ -31,7 +29,7 @@ else if (event is RemoveWishlist) {
 
 }
 
-Stream<WishlishState>_mapStartWishlistToState()async*{
+Stream<WishlistState>_mapStartWishlistToState()async*{
   yield WishListLoading();
   try {
     await Future<void>.delayed(const Duration(seconds: 1));
@@ -40,8 +38,8 @@ Stream<WishlishState>_mapStartWishlistToState()async*{
     print(e);
   }
 }
-Stream<WishlishState>_mapAddWishlistToState(  AddWishlist event,
-  WishlishState state
+Stream<WishlistState>_mapAddWishlistToState(  AddWishlist event,
+  WishlistState state
   )async*{
 if (state is WishlistLoaded) {
 
@@ -54,8 +52,8 @@ if (state is WishlistLoaded) {
 }
   }
 
-  Stream<WishlishState>_mapRemoveWishlistToState(  RemoveWishlist event,
-  WishlishState state
+  Stream<WishlistState>_mapRemoveWishlistToState(  RemoveWishlist event,
+  WishlistState state
   )async*{
 if (state is WishlistLoaded) {
 

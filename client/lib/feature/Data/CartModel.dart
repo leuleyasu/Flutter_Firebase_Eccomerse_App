@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'ProductModel.dart';
 
 class Cart extends Equatable{
-  @override
   double get subtotal=> products.fold(0, (total, currntprice) => total+currntprice.price);
 
   String freedlivery(subtotal){

@@ -29,8 +29,9 @@ class _WishListScreenState extends State<WishListScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Customappbar(title: "WishList"),
+
       ),
-      body: BlocBuilder<WishlishBloc, WishlishState>(
+      body: BlocBuilder<WishlistBloc, WishlishState>(
 
         builder: (context, state) {
 

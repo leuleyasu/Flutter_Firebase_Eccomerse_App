@@ -38,7 +38,7 @@ class _HomeScreenState extends State<HomeScreen> {
    actions: [
 IconButton(onPressed: (){
   Navigator.pushNamed(context, '/Wishlist');
-}, icon:  Icon(Icons.favorite_outline))
+}, icon:  const Icon(Icons.favorite_outline))
    ], ),
     bottomNavigationBar: const CustomBottombar(),
 
@@ -59,10 +59,15 @@ IconButton(onPressed: (){
               ),
             ),
 
-       SectionTitle(title: "Reccomended"),
+       const SectionTitle(title: "Reccomended"),
       ProductSliderSection(product:
       ProductModel.products.where(
       (products) => products.isReccomended).toList() ),
+
+
+
+
+
        SectionTitle(title: "Popular"),
       ProductSliderSection(product:
       ProductModel.products.where(
