@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CustomBottombar extends StatelessWidget {
+
   const CustomBottombar({
     super.key,
   });
@@ -20,8 +21,8 @@ class CustomBottombar extends StatelessWidget {
         IconButton(onPressed: (){
           Navigator.pushNamed(context, '');
         }, icon: const Icon(Icons.home_outlined, color: Colors.amber,))
-       , IconButton(onPressed: (){}, icon: Icon(Icons.shopping_cart,color: Colors.amber,))
-        ,IconButton(onPressed: (){}, icon: Icon(Icons.person_outlined,color: Colors.amber,))
+       , IconButton(onPressed: (){ Navigator.pushNamed(context, "/cart");}, icon: Icon(Icons.shopping_cart,color: Colors.amber,))
+        ,IconButton(onPressed: (){}, icon: const Icon(Icons.person_outlined,color: Colors.amber,))
       ],
     ),
       ),
