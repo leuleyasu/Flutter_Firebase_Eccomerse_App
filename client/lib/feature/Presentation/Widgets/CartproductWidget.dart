@@ -12,9 +12,11 @@ class CartProduct extends StatelessWidget {
     return Row(
       children: [
         Image.network(product.imageUrl,
+        fit: BoxFit.fill,
         width: 100,
         height: 100,
         ),
+        SizedBox(height: 20,),
       Column(
 
         children: [
@@ -24,20 +26,19 @@ class CartProduct extends StatelessWidget {
        Row(
 children: [
   IconButton(onPressed: (){}
-  , icon: Icon(Icons.remove_circle)),
-  Text("1"),
+  , icon: const Icon(Icons.remove_circle)),
+  const Text("1"),
    IconButton(onPressed: (){}
-  , icon: Icon(Icons.add_circle))
+  , icon: const Icon(Icons.add_circle))
 ],
        )
 
         ],
 
-      )
+      ),
 
 
       ],
-
     );
   }
 }

@@ -1,7 +1,11 @@
-import 'package:client/feature/Business/bloc/wishlish_event.dart';
-import 'package:client/feature/Business/bloc/wishlish_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../Data/wishlistmodel.dart';
+import 'package:equatable/equatable.dart';
+
+import '../../../../Data/ProductModel.dart';
+import '../../../../Data/wishlistmodel.dart';
+
+part 'wishlist_event.dart';
+part 'wishlist_state.dart';
 
 class WishlistBloc extends Bloc<WishlistEvent, WishlistState> {
   WishlistBloc() : super(WishListLoading());

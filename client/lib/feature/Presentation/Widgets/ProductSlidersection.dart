@@ -23,7 +23,7 @@ class ProductSliderSection extends StatelessWidget {
         height: 160,
         child: ListView.builder(
           itemCount: product.length,
-         shrinkWrap: true,
+          shrinkWrap: true,
          scrollDirection: Axis.horizontal,
           itemBuilder: (context,index){
 
