@@ -60,15 +60,13 @@ IconButton(onPressed: (){
     },
     builder: (context, state) {
       // Build your UI based on the current state
-      return IconButton(
-        onPressed: () {
-          // Dispatch the AddWishlist event when IconButton is pressed
-          context.read<WishlistBloc>().add(AddWishlist(reccomended));
+      return GestureDetector(
+        onTap: () {
+            context.read<WishlistBloc>().add(AddWishlist(reccomended));
+
         },
-        icon: const Icon(
-          Icons.favorite_outline,
-          color: Colors.white,
-        ),
+
+        child:const Icon(Icons.favorite_border_outlined,color: Colors.white,),
       );
     },
   ),
