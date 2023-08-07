@@ -4,7 +4,8 @@ import '../../Data/ProductModel.dart';
 
 class CartProduct extends StatelessWidget {
   final ProductModel product;
-  const CartProduct({super.key,required this.product});
+  final int quantity;
+  const CartProduct({super.key,required this.product, required this.quantity});
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +28,7 @@ class CartProduct extends StatelessWidget {
 children: [
   IconButton(onPressed: (){}
   , icon: const Icon(Icons.remove_circle)),
-  const Text("1"),
+       Text('/$quantity'),
    IconButton(onPressed: (){}
   , icon: const Icon(Icons.add_circle))
 ],
