@@ -1,10 +1,10 @@
 
 import 'package:client/feature/Data/Categorymodel.dart';
 import 'package:client/feature/Data/ProductModel.dart';
-import 'package:client/feature/Presentation/Screen/CatalogScreen.dart';
-import 'package:client/feature/Presentation/Screen/Homescreen.dart';
-import 'package:client/feature/Presentation/Screen/cartScreen.dart';
-import 'package:client/feature/Presentation/Screen/splashscree.dart';
+import 'package:client/feature/Eccomerse_Mobile_App/Presentation/Screen/CatalogScreen.dart';
+import 'package:client/feature/Eccomerse_Mobile_App/Presentation/Screen/Homescreen.dart';
+import 'package:client/feature/Eccomerse_Mobile_App/Presentation/Screen/cartScreen.dart';
+import 'package:client/feature/Eccomerse_Mobile_App/Presentation/Screen/splashscree.dart';
 import 'package:flutter/material.dart';
 
 import '../Presentation/Screen/ReccomendedProduct.dart';

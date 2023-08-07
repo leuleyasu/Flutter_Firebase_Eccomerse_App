@@ -1,12 +1,11 @@
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:client/feature/Business/bloc/Cart/bloc/cart_bloc.dart';
-import 'package:client/feature/Presentation/Widgets/CatagorySlider.dart';
-import 'package:client/feature/Presentation/Widgets/customappbar.dart';
+import 'package:client/feature/Eccomerse_Mobile_App/Presentation/Widgets/CatagorySlider.dart';
+import 'package:client/feature/Eccomerse_Mobile_App/Presentation/Widgets/customappbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-import '../../Business/bloc/wishlist/bloc/wishlist_bloc.dart';
-import '../../Data/ProductModel.dart';
+import '../../../Data/ProductModel.dart';
+import '../../../Domain/bloc/Cart/bloc/cart_bloc.dart';
+import '../../../Domain/bloc/wishlist/bloc/wishlist_bloc.dart';
 
 class ReccomendedProduct extends StatelessWidget {
   const ReccomendedProduct({super.key, required this.Product});

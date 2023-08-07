@@ -1,12 +1,12 @@
 
 import 'package:client/feature/Business/bloc/Cart/bloc/cart_bloc.dart';
-import 'package:client/feature/Presentation/Screen/splashscree.dart';
+import 'package:client/feature/Eccomerse_Mobile_App/Presentation/Screen/splashscree.dart';
 import 'package:client/feature/config/approuter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:firebase_core/firebase_core.dart';
-
 import 'blocobserver.dart';
+import 'feature/Business/bloc/wishlist/bloc/wishlist_bloc.dart';
 Future<void> main() async {
 Bloc.observer = SimpleBlocObserver();
 
@@ -16,9 +16,9 @@ await Firebase.initializeApp();
 
     MultiBlocProvider(
       providers: [
-        // BlocProvider<WishlistBloc>(
-        //   create: (_) => WishlistBloc()
-        // ),
+        BlocProvider<WishlistBloc>(
+          create: (_) => WishlistBloc()
+        ),
           BlocProvider<CartBloc>(
           create: (_) => CartBloc()
         )

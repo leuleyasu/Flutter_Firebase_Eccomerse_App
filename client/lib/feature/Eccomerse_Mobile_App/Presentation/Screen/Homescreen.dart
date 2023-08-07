@@ -1,7 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:client/feature/Data/Models.dart';
-import 'package:client/feature/Presentation/Widgets/sectiontitle.dart';
+import 'package:client/feature/Eccomerse_Mobile_App/Presentation/Widgets/sectiontitle.dart';
 import 'package:flutter/material.dart';
 import '../Widgets/ProductSlidersection.dart';
 import '../Widgets/CatagorySlider.dart';
