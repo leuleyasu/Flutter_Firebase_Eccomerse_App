@@ -1,9 +1,9 @@
-import 'package:client/feature/Business/bloc/Cart/bloc/cart_bloc.dart';
-import 'package:client/feature/Data/Models.dart';
-import 'package:client/feature/Presentation/Widgets/widgets.dart';
+
+import 'package:client/feature/Eccomerse_Mobile_App/Presentation/Widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../Domain/bloc/Cart/bloc/cart_bloc.dart';
 import '../Widgets/CartproductWidget.dart';
 import '../Widgets/customappbar.dart';
 

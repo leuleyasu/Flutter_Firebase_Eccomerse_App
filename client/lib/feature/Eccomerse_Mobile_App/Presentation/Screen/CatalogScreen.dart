@@ -1,7 +1,7 @@
 
 import 'package:client/feature/Data/Categorymodel.dart';
 import 'package:client/feature/Data/ProductModel.dart';
-import 'package:client/feature/Presentation/Widgets/widgets.dart';
+import 'package:client/feature/Eccomerse_Mobile_App/Presentation/Widgets/widgets.dart';
 import 'package:flutter/material.dart';
 class CatalogScreen extends StatelessWidget {
   const CatalogScreen({super.key, required this.categoriesname});
