@@ -1,14 +1,16 @@
 
 import 'package:client/feature/Business/bloc/Cart/bloc/cart_bloc.dart';
 import 'package:client/feature/Presentation/Screen/export.dart';
+import 'package:client/feature/Presentation/Screen/splashscree.dart';
 import 'package:client/feature/config/approuter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-import 'feature/Business/bloc/wishlist/bloc/wishlist_bloc.dart';
-
-void main() {
+import 'package:firebase_core/firebase_core.dart';
+Future<void> main() async {
+   WidgetsFlutterBinding.ensureInitialized();
+await Firebase.initializeApp();
   runApp(
+
     MultiBlocProvider(
       providers: [
         // BlocProvider<WishlistBloc>(
@@ -37,7 +39,7 @@ class MyApp extends StatelessWidget {
             useMaterial3: true,
  ),
           onGenerateRoute: AppRouter.onGenerateRoute,
-          initialRoute: HomeScreen.routename,
+          initialRoute: SplashScreen.routename
 
     );
 
