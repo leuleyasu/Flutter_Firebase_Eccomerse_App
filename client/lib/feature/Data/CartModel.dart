@@ -8,7 +8,25 @@ class Cart extends Equatable {
  const Cart({
      this.product= const <ProductModel>[]
   });
+  Map productqauntity(product){
+ var quantity = {};
 
+  // Iterate through the list of products using the forEach method
+  products.forEach((product) {
+    // Check if the product is not already in the map
+    if (!quantity.containsKey(product)) {
+      // If the product is not in the map, add it with a quantity of 1
+      quantity[product] = 1;
+    } else {
+      // If the product is already in the map, increment its quantity by 1
+      quantity[product] += 1;
+    }
+  });
+
+  // Return the map containing the product quantities
+  return quantity;
+
+  }
   String freedlivery(subtotal){
 if (subtotal>=30) {
   return "you have free delivery";

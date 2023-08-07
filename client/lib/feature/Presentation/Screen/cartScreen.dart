@@ -24,20 +24,6 @@ class CartScreen extends StatefulWidget {
 class _CartScreenState extends State<CartScreen> {
 late CartBloc bloc;
   @override
-
-  // void initState() {
-  //  bloc=CartBloc();
-  //  bloc.add(InitCart());
-  //   // TODO: implement initState
-
-  //   super.initState();
-  // }
-  // @override
-  // void dispose() {
-  //   // TODO: implement dispose
-  //   super.dispose();
-  //   bloc.close();
-  // }
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -100,12 +86,13 @@ late CartBloc bloc;
                     ListView.builder(
                         shrinkWrap: true,
                         physics: const BouncingScrollPhysics(),
-                        itemCount: Cart.products.length,
+                        itemCount: state.cart.product.length,
                         itemBuilder: (context, index) {
                           return Padding(
                             padding: const EdgeInsets.symmetric(vertical: 5),
                             child: CartProduct(
-                              product: ProductModel.products[index],
+                              product: state.cart.productqauntity(state.cart.product).keys.elementAt(index),
+                              quantity:state.cart.productqauntity(state.cart.product).values.elementAt(index)
                             ),
                           );
                         }),
@@ -138,11 +125,11 @@ late CartBloc bloc;
                               decoration:
                                   const BoxDecoration(color: Colors.black),
                               child:  Padding(
-                                padding: EdgeInsets.symmetric(
+                                padding: const EdgeInsets.symmetric(
                                     horizontal: 20, vertical: 10),
                                 child: Row(
                                   children: [
-                                    Text(
+                                    const Text(
                                       "Total",
                                       style: TextStyle(color: Colors.white),
                                     ),
