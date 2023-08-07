@@ -1,12 +1,13 @@
-import 'dart:ffi';
 
 import 'package:equatable/equatable.dart';
-import 'package:flutter/material.dart';
-
 import 'ProductModel.dart';
 
-class Cart extends Equatable{
+class Cart extends Equatable {
   double get subtotal=> products.fold(0, (total, currntprice) => total+currntprice.price);
+ final List<ProductModel> product;
+ const Cart({
+     this.product= const <ProductModel>[]
+  });
 
   String freedlivery(subtotal){
 if (subtotal>=30) {
@@ -24,9 +25,14 @@ num mising = 30-subtotal;
   return 10.0;
 }
   }
+  double total(subtotal,freedlivery){
+    return subtotal+freedlivery;
+  }
   String get subtotalString=>subtotal.toStringAsFixed(2);
   String get deiveryfeeString=>deiveryfee(subtotal).toStringAsFixed(2);
   String get freedliverytring=>freedlivery(subtotal);
+  String get totalString => total(subtotal, freedlivery).toStringAsFixed(2);
+
 
    List<Object?> get props => [];
  static List<ProductModel> products = [

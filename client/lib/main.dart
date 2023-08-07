@@ -1,17 +1,22 @@
-import 'package:client/feature/Business/bloc/wishlish_bloc.dart';
-import 'package:client/feature/Presentation/Screen/Homescreen.dart';
+
+import 'package:client/feature/Business/bloc/Cart/bloc/cart_bloc.dart';
 import 'package:client/feature/Presentation/Screen/export.dart';
 import 'package:client/feature/config/approuter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import 'feature/Business/bloc/wishlist/bloc/wishlist_bloc.dart';
+
 void main() {
   runApp(
     MultiBlocProvider(
       providers: [
-        BlocProvider<WishlistBloc>(
-          create: (_) => WishlistBloc()
-        ),
+        // BlocProvider<WishlistBloc>(
+        //   create: (_) => WishlistBloc()
+        // ),
+          BlocProvider<CartBloc>(
+          create: (_) => CartBloc()
+        )
       ],
       child: const MyApp(),
     ),
@@ -32,7 +37,7 @@ class MyApp extends StatelessWidget {
             useMaterial3: true,
  ),
           onGenerateRoute: AppRouter.onGenerateRoute,
-          initialRoute: CartScreen.routename,
+          initialRoute: HomeScreen.routename,
 
     );
 
