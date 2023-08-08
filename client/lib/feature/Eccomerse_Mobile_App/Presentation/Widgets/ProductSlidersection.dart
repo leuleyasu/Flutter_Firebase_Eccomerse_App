@@ -1,7 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
-
-import '../../../Data/ProductModel.dart';
+import '../../Data/Models/ProductModel.dart';
 import 'Productcarausel.dart';
 
 class ProductSliderSection extends StatelessWidget {

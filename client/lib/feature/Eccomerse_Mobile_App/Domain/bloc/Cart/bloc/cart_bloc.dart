@@ -1,7 +1,8 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:client/feature/Data/Models.dart';
 import 'package:equatable/equatable.dart';
 
+import '../../../../Data/Models/CartModel.dart';
+import '../../../../Data/Models/ProductModel.dart';
 
 part 'cart_event.dart';
 part 'cart_state.dart';

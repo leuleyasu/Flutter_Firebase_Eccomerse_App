@@ -3,7 +3,7 @@ import 'package:client/feature/Eccomerse_Mobile_App/Presentation/Widgets/widgets
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../Domain/bloc/Cart/bloc/cart_bloc.dart';
+import '../../Domain/bloc/Cart/bloc/cart_bloc.dart';
 import '../Widgets/CartproductWidget.dart';
 import '../Widgets/customappbar.dart';
 

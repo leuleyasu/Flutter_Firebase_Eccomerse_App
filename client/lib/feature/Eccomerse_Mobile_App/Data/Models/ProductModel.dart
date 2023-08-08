@@ -1,4 +1,8 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'dart:convert';
+import 'dart:html';
+
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:equatable/equatable.dart';
 
 class ProductModel extends Equatable {
@@ -176,4 +180,20 @@ final bool ispopular;
 
     ),
   ];
+
+
+
+  static ProductModel fromSnapshot(DocumentSnapshot snap) {
+    return ProductModel(
+      id: snap['id'] as String,
+      name: snap['name'] as String,
+      category: snap['category'] as String,
+      imageUrl: snap['imageUrl'] as String,
+      price: snap['price'] as double,
+      isReccomended: snap['isReccomended'] as bool,
+      ispopular: snap['ispopular'] as bool,
+    );
+  }
+
+
 }
