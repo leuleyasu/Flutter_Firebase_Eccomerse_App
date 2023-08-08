@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../Data/ProductModel.dart';
+import '../../Data/Models/ProductModel.dart';
 import '../../Domain/bloc/Cart/bloc/cart_bloc.dart';
 
 class ProductCarausel extends StatelessWidget {

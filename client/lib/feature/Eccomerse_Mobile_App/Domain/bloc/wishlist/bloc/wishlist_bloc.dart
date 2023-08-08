@@ -1,9 +1,8 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:equatable/equatable.dart';
 
-import '../../../../Data/ProductModel.dart';
-import '../../../../Data/wishlistmodel.dart';
-
+import '../../../../Data/Models/ProductModel.dart';
+import '../../../../Data/Models/wishlistmodel.dart';
 part 'wishlist_event.dart';
 part 'wishlist_state.dart';
 

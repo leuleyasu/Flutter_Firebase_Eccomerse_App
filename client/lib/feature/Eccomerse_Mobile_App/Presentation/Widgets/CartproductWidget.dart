@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../Data/ProductModel.dart';
-
+import '../../Data/Models/ProductModel.dart';
 class CartProduct extends StatelessWidget {
   final ProductModel product;
   final int quantity;

@@ -1,5 +1,4 @@
-import 'package:client/feature/Eccomerse_Mobile_App/Data/Categorymodel.dart';
-import 'package:flutter/foundation.dart';
+import '../../Data/Models/Categorymodel.dart';
 
 abstract class BaseCategorie {
   Stream<List<CategoryModel>>getAllcategory();

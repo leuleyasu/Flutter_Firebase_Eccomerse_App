@@ -1,8 +1,7 @@
 
 import 'package:flutter/material.dart';
-
-import '../../Data/Categorymodel.dart';
-import '../../Data/ProductModel.dart';
+import '../../Data/Models/Categorymodel.dart';
+import '../../Data/Models/ProductModel.dart';
 
 class CategoryProductSlider extends StatelessWidget {
   final CategoryModel? category;

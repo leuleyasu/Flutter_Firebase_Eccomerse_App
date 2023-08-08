@@ -2,9 +2,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:client/feature/Eccomerse_Mobile_App/Presentation/Widgets/sectiontitle.dart';
 import 'package:flutter/material.dart';
-import '../../Data/Categorymodel.dart';
+import '../../Data/Models/Categorymodel.dart';
 import '../../Data/Models/ProductModel.dart';
-import '../../Data/ProductModel.dart';
 import '../Widgets/ProductSlidersection.dart';
 import '../Widgets/CatagorySlider.dart';
 import '../Widgets/custombottmbar.dart';
