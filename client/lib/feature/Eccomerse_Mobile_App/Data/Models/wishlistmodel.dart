@@ -1,6 +1,7 @@
 
-import 'package:client/feature/Data/ProductModel.dart';
 import 'package:equatable/equatable.dart';
+
+import 'ProductModel.dart';
 
 class WishList extends Equatable{
 
