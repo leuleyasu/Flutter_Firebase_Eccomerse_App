@@ -2,8 +2,8 @@
 import 'package:client/feature/Eccomerse_Mobile_App/Presentation/Widgets/customappbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../Domain/bloc/wishlist/bloc/wishlist_bloc.dart';
 import '../Widgets/Productcarausel.dart';
+import '../bloc/wishlist/bloc/wishlist_bloc.dart';
 
 class WishListScreen extends StatefulWidget {
   const WishListScreen({

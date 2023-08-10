@@ -16,9 +16,8 @@ class CartProduct extends StatelessWidget {
         width: 100,
         height: 100,
         ),
-        SizedBox(height: 20,),
+     const   SizedBox(height: 20,),
       Column(
-
         children: [
         Text(product.name),
         Text('${product.price}'),

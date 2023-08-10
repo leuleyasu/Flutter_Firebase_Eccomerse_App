@@ -55,8 +55,8 @@ IconButton(onPressed: (){
               enableInfiniteScroll: false,
               initialPage: 2,
 
-                ),
-       items: CategoryModel.categories.map((e) => CategoryProductSlider(category: e)).toList(),
+                 ),
+             items: CategoryModel.categories.map((e) => CategoryProductSlider(category: e)).toList(),
               ),
             ),
 

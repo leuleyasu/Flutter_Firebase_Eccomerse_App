@@ -9,12 +9,6 @@ class CategoryModel extends Equatable {
     required this.name,
     required this.imageUrl,
   });
-
-
-
-
-
-
   @override
   List<Object?> get props => [name,imageUrl];
  static List<CategoryModel> categories = [

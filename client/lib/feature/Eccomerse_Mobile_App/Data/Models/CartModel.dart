@@ -12,7 +12,7 @@ class Cart extends Equatable {
  var quantity = {};
 
   // Iterate through the list of products using the forEach method
-  products.forEach((product) {
+  for (var product in products) {
     // Check if the product is not already in the map
     if (!quantity.containsKey(product)) {
       // If the product is not in the map, add it with a quantity of 1
@@ -21,7 +21,7 @@ class Cart extends Equatable {
       // If the product is already in the map, increment its quantity by 1
       quantity[product] += 1;
     }
-  });
+  }
 
   // Return the map containing the product quantities
   return quantity;
@@ -52,7 +52,8 @@ num mising = 30-subtotal;
   String get totalString => total(subtotal, freedlivery).toStringAsFixed(2);
 
 
-   List<Object?> get props => [];
+   @override
+     List<Object?> get props => [];
  static List<ProductModel> products = [
 
     const ProductModel(
