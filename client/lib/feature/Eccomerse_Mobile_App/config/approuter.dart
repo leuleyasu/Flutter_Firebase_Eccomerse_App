@@ -4,6 +4,8 @@ import 'package:client/feature/Eccomerse_Mobile_App/Presentation/Screen/Homescre
 import 'package:client/feature/Eccomerse_Mobile_App/Presentation/Screen/cartScreen.dart';
 import 'package:client/feature/Eccomerse_Mobile_App/Presentation/Screen/splashscree.dart';
 import 'package:flutter/material.dart';
+import '../Data/Models/Categorymodel.dart';
+import '../Data/Models/ProductModel.dart';
 import '../Presentation/Screen/ReccomendedProduct.dart';
 import '../Presentation/Screen/WishlistScreen.dart';
 
@@ -30,7 +32,7 @@ return _errorRoute();
       ),
       builder: (_)=>Scaffold(
         appBar: AppBar(
-          title: Text("Error transition"),
+          title: const Text("Error transition"),
         ),
       ));
   }
