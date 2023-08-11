@@ -6,7 +6,7 @@ import 'package:client/feature/Eccomerse_Mobile_App/Domain/Repositories/BaseProd
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class ProductRepositories extends BaseProductRepositorie {
-  FirebaseFirestore _firebaseFirestore;
+  final FirebaseFirestore _firebaseFirestore;
   ProductRepositories({
    FirebaseFirestore? firebaseFirestore
   }):_firebaseFirestore=firebaseFirestore ??FirebaseFirestore.instance;

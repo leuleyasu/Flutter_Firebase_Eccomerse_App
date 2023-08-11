@@ -12,11 +12,11 @@ final class CategoryLoading extends CategorieState {
   // TODO: implement props
   List<Object?> get props =>[];
 }
-final class CategoryLoaded extends CategorieState {
-  final List <CategoryModel> category;
+class CategoryLoaded extends CategorieState {
+  final List<CategoryModel> categories;
 
-  CategoryLoaded(this.category);
+  CategoryLoaded({this.categories = const <CategoryModel>[]});
+
   @override
-  // TODO: implement props
-  List<Object?> get props => [category];
+  List<Object> get props => [categories];
 }
