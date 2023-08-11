@@ -2,6 +2,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:client/feature/Eccomerse_Mobile_App/Presentation/Widgets/sectiontitle.dart';
 import 'package:client/feature/Eccomerse_Mobile_App/Presentation/bloc/categorie/bloc/categorie_bloc.dart';
+import 'package:client/feature/Eccomerse_Mobile_App/Presentation/bloc/product/bloc/product_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../Data/Models/Categorymodel.dart';
@@ -50,39 +51,70 @@ class _HomeScreenState extends State<HomeScreen> {
               padding: const EdgeInsets.symmetric(vertical: 20),
               child: BlocBuilder<CategorieBloc, CategorieState>(
                 builder: (context, state) {
-                     if (state is LoadCategories) {
-                   return const Center(
-                    child: CircularProgressIndicator(),
-                   );
-                 }if (state is UpdateCategories) {
- return CarouselSlider(
-                    options: CarouselOptions(
-                      aspectRatio: 1.5,
-                      enlargeCenterPage: true,
-                      enableInfiniteScroll: false,
-                      initialPage: 2,
-                    ),
-                    items: CategoryModel.categories
-                        .map((e) => CategoryProductSlider(category: e))
-                        .toList(),
-                  );
-                 }else{
-                  return const Text("something went wrong");
-                 }
-
+                  if (state is LoadCategories) {
+                    return const Center(
+                      child: CircularProgressIndicator(),
+                    );
+                  }
+                  if (state is UpdateCategories) {
+                    return CarouselSlider(
+                      options: CarouselOptions(
+                        aspectRatio: 1.5,
+                        enlargeCenterPage: true,
+                        enableInfiniteScroll: false,
+                        initialPage: 2,
+                      ),
+                      items: CategoryModel.categories
+                          .map((e) => CategoryProductSlider(category: e))
+                          .toList(),
+                    );
+                  } else {
+                    return const Text("something went wrong");
+                  }
                 },
               ),
             ),
             const SectionTitle(title: "Reccomended"),
-            ProductSliderSection(
-                product: ProductModel.products
-                    .where((products) => products.isReccomended)
-                    .toList()),
-            SectionTitle(title: "Popular"),
-            ProductSliderSection(
+            BlocBuilder<Productbloc, Producstate>(
+              builder: (context, state) {
+                if (state is Loadproduct) {
+                  return Center(
+                    child: CircularProgressIndicator(),
+                  );
+
+                }if (state is productloaded) {
+  return ProductSliderSection(
+                    product: ProductModel.products
+                        .where((products) => products.isReccomended)
+                        .toList());
+                }
+                else{
+                  return const Text("somethig went wrong");
+                }
+
+              },
+            ),
+         const   SectionTitle(title: "Popular"),
+           BlocBuilder<Productbloc, Producstate>(
+              builder: (context, state) {
+                if (state is Loadproduct) {
+                  return Center(
+                    child: CircularProgressIndicator(),
+                  );
+
+                }if (state is productloaded) {
+  ProductSliderSection(
                 product: ProductModel.products
                     .where((products) => products.ispopular)
-                    .toList()),
+                    .toList());
+                }
+
+                  return const Text("somethig went wrong");
+
+
+              },
+            ),
+
           ]),
         ));
   }
